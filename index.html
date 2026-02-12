@@ -6,8 +6,7 @@
     <title>Class Compass | Цифровая образовательная платформа</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <!-- Header -->
@@ -38,13 +37,22 @@
                     <p>Class Compass — это цифровая экосистема для современной школы, объединяющая учеников, учителей и родителей в едином образовательном пространстве с передовыми технологиями.</p>
                     <div class="hero-buttons">
                         <a href="#download" class="btn btn-accent">Скачать приложение <i class="fas fa-arrow-down"></i></a>
-                        <a href="#features" class="btn btn-outline">Узнать больше <i class="fas fa-chevron-right"></i></a>
+                        <a href="#features" class="btn btn-outline smooth-scroll">Узнать больше <i class="fas fa-chevron-right"></i></a>
                     </div>
                 </div>
                 <div class="hero-image" data-aos="fade-left" data-aos-duration="800">
-                    <img src="photo_2025-05-31_17-24.jpg" alt="EduConnect App" class="phone-mockup">
-                    <img src="photo_2025-04-20_18-32-15.jpg" alt="App screenshot" class="app-screenshot screenshot-1">
-                    <img src="photo_2025-05-31_17-26-519.jpg" alt="App screenshot" class="app-screenshot screenshot-2">
+                    <div class="phone-mockup-container">
+                        <div class="phone-frame">
+                            <img src="photo_2025-05-31_17-24.jpg" alt="Class Compass App" class="phone-screen">
+                            <div class="dynamic-island"></div>
+                        </div>
+                        <div class="floating-element floating-1">
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <div class="floating-element floating-2">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -53,9 +61,20 @@
     <!-- Partners Section -->
     <section class="partners">
         <div class="container">
-            <div class="partners-container">
-                <img src="IMG_0652.PNG" alt="Partner Logo" class="partner-logo">
-                <img src="firebase.png" alt="Partner Logo" class="partner-logo">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Наши партнеры</h2>
+                <p>Вместе создаем будущее образования</p>
+            </div>
+            <div class="partners-grid">
+                <div class="partner-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="IMG_0652.PNG" alt="Partner Logo" class="partner-logo">
+                </div>
+                <div class="partner-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="firebase.png" alt="Partner Logo" class="partner-logo">
+                </div>
+                <div class="partner-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="icon.png" alt="Partner Logo" class="partner-logo">
+                </div>
             </div>
         </div>
     </section>
@@ -74,8 +93,6 @@
                     </div>
                     <h3>Цифровые учебники</h3>
                     <p>Полная библиотека учебных материалов с интерактивными элементами, видео и тестами. Доступ онлайн и синхронизация между устройствами.</p>
-                    <div class="feature-image">
-                    </div>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="feature-icon">
@@ -83,8 +100,6 @@
                     </div>
                     <h3>Домашние задания</h3>
                     <p>Удобная система заданий с автоматическими напоминаниями, возможностью прикрепления файлов и сдачей работ в цифровом формате.</p>
-                    <div class="feature-image">
-                    </div>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-icon">
@@ -92,8 +107,6 @@
                     </div>
                     <h3>Аналитика успеваемости</h3>
                     <p>Детальная статистика по успеваемости с выявлением сильных и слабых сторон ученика, прогнозированием результатов и рекомендациями.</p>
-                    <div class="feature-image">
-                    </div>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="feature-icon">
@@ -101,46 +114,13 @@
                     </div>
                     <h3>Достижения</h3>
                     <p>Система геймификации с наградами, бейджами и рейтингами за учебные успехи и активность, повышающая мотивацию к обучению.</p>
-                    <div class="feature-image">
-                    </div>
-                </div>
-                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                    <h3>Коммуникация</h3>
-                    <p>Встроенный чат для общения между учениками, учителями и родителями с возможностью обмена файлами.</p>
-                    <div class="feature-image">
-                    </div>
                 </div>
                 <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="feature-icon">
                         <i class="fas fa-calendar-alt"></i>
                     </div>
                     <h3>Расписание</h3>
-                    <p>Умное расписание занятий с автоматическими изменениями, напоминаниями и синхронизацией.</p>
-                    <div class="feature-image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section class="video-section" id="video">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>Как работает Class Compass</h2>
-                <p>Посмотрите короткое видео о возможностях нашей платформы</p>
-            </div>
-            <div class="video-container" data-aos="fade-up" data-aos-delay="200">
-                <video poster="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80">
-                    <source src="https://samplelib.com/lib/preview/mp4/sample-5s.mp4" type="video/mp4">
-                </video>
-                <div class="video-overlay">
-                    <div class="play-button">
-                        <i class="fas fa-play"></i>
-                    </div>
+                    <p>Умное расписание занятий с автоматическими изменениями, напоминаниями и синхронизацией с календарем.</p>
                 </div>
             </div>
         </div>
@@ -150,8 +130,8 @@
     <section class="stats" data-aos="fade-up">
         <div class="container">
             <div class="section-title">
-                <h2>Class Compass в цифрах</h2>
-                <p>Наша платформа уже меняет образовательный процесс</p>
+                <h2>Пилотный проект</h2>
+                <p>Class Compass успешно внедряется в тестовой школе</p>
             </div>
             <div class="stats-grid">
                 <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
@@ -171,10 +151,14 @@
                     <div class="stat-label">Предметов</div>
                 </div>
             </div>
+            <div class="stats-note" data-aos="fade-up">
+                <i class="fas fa-flask"></i>
+                <span>Проводится пилотное тестирование. Приглашаем обучающихся 9-11 классов к участию в программе.</span>
+            </div>
         </div>
     </section>
 
-    <!-- For Students and Teachers -->
+    <!-- Audience Section -->
     <section class="audience" id="solutions">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
@@ -203,7 +187,7 @@
                     <div class="audience-feature" data-aos="fade-up" data-aos-delay="300">
                         <i class="fas fa-gamepad"></i>
                         <h4>Мотивация</h4>
-                        <p>Игровые элементы, бейджи и рейтинги делают процесс обучения более увлекательным и мотивирующим.</p>
+                        <p>Игровые элементы, бейджи и рейтинги делают процесс обучения более увлекательным.</p>
                     </div>
                     <div class="audience-feature" data-aos="fade-up" data-aos-delay="400">
                         <i class="fas fa-chart-pie"></i>
@@ -222,7 +206,7 @@
                     <div class="audience-feature" data-aos="fade-up" data-aos-delay="200">
                         <i class="fas fa-users"></i>
                         <h4>Управление классом</h4>
-                        <p>Все ученики в одном месте с доступом к их успеваемости, контактам и персональной статистике.</p>
+                        <p>Все ученики в одном месте с доступом к их успеваемости и персональной статистике.</p>
                     </div>
                     <div class="audience-feature" data-aos="fade-up" data-aos-delay="300">
                         <i class="fas fa-file-export"></i>
@@ -232,7 +216,7 @@
                     <div class="audience-feature" data-aos="fade-up" data-aos-delay="400">
                         <i class="fas fa-tools"></i>
                         <h4>Инструменты</h4>
-                        <p>Создание тестов, интерактивных материалов и индивидуальных заданий для разных групп учеников.</p>
+                        <p>Создание тестов, интерактивных материалов и индивидуальных заданий.</p>
                     </div>
                 </div>
             </div>
@@ -246,7 +230,7 @@
                     <div class="audience-feature" data-aos="fade-up" data-aos-delay="200">
                         <i class="fas fa-bell"></i>
                         <h4>Уведомления</h4>
-                        <p>Оповещения о важных событиях, оценках и посещаемости.</p>
+                        <p>Оповещения о важных событиях, оценках и посещаемости в реальном времени.</p>
                     </div>
                     <div class="audience-feature" data-aos="fade-up" data-aos-delay="300">
                         <i class="fas fa-comments"></i>
@@ -256,7 +240,7 @@
                     <div class="audience-feature" data-aos="fade-up" data-aos-delay="400">
                         <i class="fas fa-calendar"></i>
                         <h4>Расписание</h4>
-                        <p>Доступ к расписанию занятий и школьных мероприятий с возможностью синхронизации.</p>
+                        <p>Доступ к расписанию занятий и школьных мероприятий с синхронизацией.</p>
                     </div>
                 </div>
             </div>
@@ -269,7 +253,7 @@
                         <p>Комплексная аналитика успеваемости по классам и предметам с выявлением тенденций.</p>
                     </div>
                     <div class="audience-feature" data-aos="fade-up" data-aos-delay="200">
-                        <i class="fas fa-users"></i>
+                        <i class="fas fa-users-cog"></i>
                         <h4>Управление</h4>
                         <p>Централизованное управление всеми пользователями школы с различными уровнями доступа.</p>
                     </div>
@@ -281,61 +265,82 @@
                     <div class="audience-feature" data-aos="fade-up" data-aos-delay="400">
                         <i class="fas fa-graduation-cap"></i>
                         <h4>Аттестация</h4>
-                        <p>Инструменты для проведения аттестации учеников и мониторинга качества образования.</p>
+                        <p>Инструменты для проведения аттестации и мониторинга качества образования.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Roadmap -->
+    <!-- Roadmap Section -->
     <section class="roadmap" id="roadmap">
         <div class="container">
             <div class="section-title" data-aos="fade-up">
-                <h2>Наше развитие</h2>
-                <p>Как мы создаем платформу будущего для образования</p>
+                <h2>Дорожная карта</h2>
+                <p>Прозрачный план развития платформы Class Compass</p>
             </div>
             <div class="timeline">
-                <div class="timeline-item left completed visible" data-aos="fade-right">
+                <div class="timeline-item left completed" data-aos="fade-right">
                     <div class="timeline-content">
-                        <div class="timeline-date"><i class="fas fa-check-circle"></i> Q3 2025</div>
-                        <h4>Запуск мобильного приложения</h4>
-                        <p>Первая версия приложения для Android с базовыми функциями электронного дневника и учебников.</p>
+                        <div class="timeline-date">
+                            <i class="fas fa-check-circle"></i>
+                            Февраль 2026
+                        </div>
+                        <h4>Запуск Beta версии для Android</h4>
+                        <p>Релиз первой тестовой версии приложения для Android с базовыми функциями электронного дневника, расписания и учебниками.</p>
+                        <div class="timeline-status">Завершено</div>
                     </div>
                 </div>
-                <div class="timeline-item right visible" data-aos="fade-left" data-aos-delay="100">
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="100">
                     <div class="timeline-content">
-                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> Q3 2025</div>
+                        <div class="timeline-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Феварль 2026
+                        </div>
                         <h4>Геймификация</h4>
-                        <p>Добавление игровых элементов, достижений и рейтинговой системы.</p>
+                        <p>Добавление игровых элементов, системы достижений, бейджей и рейтингов для повышения мотивации.</p>
+                        <div class="timeline-status in-progress">В процессе</div>
                     </div>
                 </div>
-                <div class="timeline-item left visible" data-aos="fade-right" data-aos-delay="200">
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="200">
                     <div class="timeline-content">
-                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> Q4 2025</div>
-                        <h4>База данных</h4>
-                        <p>Создание общей БД для приложения.</p>
+                        <div class="timeline-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Февраль 2026
+                        </div>
+                        <h4>Единая база данных</h4>
+                        <p>Создание облачной инфраструктуры и общей базы данных для синхронизации между всеми устройствами.</p>
+                        <div class="timeline-status in-progress">В процессе</div>
                     </div>
                 </div>
-                <div class="timeline-item right visible" data-aos="fade-left" data-aos-delay="300">
+                <div class="timeline-item right" data-aos="fade-left" data-aos-delay="300">
                     <div class="timeline-content">
-                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> Q4 2025</div>
+                        <div class="timeline-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Март 2026
+                        </div>
                         <h4>Система аналитики</h4>
-                        <p>Внедрение продвинутой аналитики успеваемости с рекомендациями для учеников.</p>
+                        <p>Внедрение продвинутой аналитики успеваемости с AI-рекомендациями для учеников и учителей.</p>
                     </div>
                 </div>
-                <div class="timeline-item left visible" data-aos="fade-right" data-aos-delay="400">
+                <div class="timeline-item left" data-aos="fade-right" data-aos-delay="400">
                     <div class="timeline-content">
-                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> Q1 2025</div>
-                        <h4>Веб-версия для ПК</h4>
-                        <p>Запуск полнофункциональной веб-версии с синхронизацией данных с мобильными приложениями.</p>
+                        <div class="timeline-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Март 2026
+                        </div>
+                        <h4>Запуск второй Beta версии для Android</h4>
+                        <p>Запуск второй тестовой версии приложения с доработками и улучшениями.</p>
                     </div>
                 </div>
-                <div class="timeline-item right visible" data-aos="fade-left" data-aos-delay="500">
+                <div class="timeline-item right" data-aos="fade-right" data-aos-delay="400">
                     <div class="timeline-content">
-                        <div class="timeline-date"><i class="fas fa-calendar-alt"></i> Q1 2025</div>
-                        <h4>Нативное приложение для ПК</h4>
-                        <p>Разработка высокопроизводительного нативного приложения для Windows.</p>
+                        <div class="timeline-date">
+                            <i class="fas fa-calendar-alt"></i>
+                            Март 2026
+                        </div>
+                        <h4>Запуск Beta версии для Android(учительская верси)</h4>
+                        <p>Запуск тестовой версии приложения для учителей.</p>
                     </div>
                 </div>
             </div>
@@ -352,30 +357,37 @@
             <div class="download-cards">
                 <div class="download-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="download-icon">
-                        <i class="fab fa-apple"></i>
-                    </div>
-                    <h3>Для iPhone и iPad</h3>
-                    <p>Оптимизировано для устройств Apple. Требуется iOS 14.0 или новее.</p>
-                   <!-- <a href="#" class="btn">App Store <i class="fas fa-arrow-down"></i></a> -->
-                    <div class="coming-soon">IOS версия в разработке</div>
-                </div>
-                <div class="download-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="download-icon">
                         <i class="fab fa-android"></i>
                     </div>
-                    <h3>Для Android</h3>
-                    <p>Доступно для смартфонов и планшетов. Требуется Android 8.0 или новее.</p>
-                   <!-- <a href="#" class="btn">Google Play <i class="fas fa-arrow-down"></i></a> -->
-                    <div class="coming-soon">Android версия в разработке</div>
+                    <h3>Android</h3>
+                    <p>Версия Beta 1.0.0</p>
+                    <div class="download-badge beta">
+                        <i class="fas fa-check-circle"></i>
+                        Beta
+                    </div>
+                    <a href="/downloads/class-compass-beta-1.0.0.apk" class="btn btn-accent download-btn" download>
+                        <i class="fas fa-download"></i>
+                        Скачать APK
+                    </a>
+                    <div class="download-meta">
+                        <span><i class="fas fa-code-branch"></i> Бета-версия</span>
+                        <span><i class="fas fa-database"></i> 28 MB</span>
+                    </div>
                 </div>
                 <div class="download-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="download-icon">
                         <i class="fas fa-desktop"></i>
                     </div>
-                    <h3>Веб-версия</h3>
-                    <p>Работает в любом современном браузере без установки.</p>
-                   <!-- <a href="#" class="btn">Открыть <i class="fas fa-external-link-alt"></i></a> -->
-                    <div class="coming-soon">Десктоп версия в разработке</div>
+                    <h3>Windows / Web</h3>
+                    <p>Веб-версия и нативное приложение для ПК</p>
+                    <div class="download-badge development">
+                        <i class="fas fa-code"></i>
+                        В разработке
+                    </div>
+                    <button class="btn btn-outline download-btn" disabled>
+                        <i class="fas fa-hourglass-half"></i>
+                        Скоро
+                    </button>
                 </div>
             </div>
         </div>
@@ -386,69 +398,62 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-column">
-                    <h3>Class Compass</h3>
-                    <p style="color: #B3B3B3; font-size: 15px; margin-bottom: 20px;">Цифровая образовательная платформа нового поколения.</p>
+                    <div class="footer-logo">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Class Compass</span>
+                    </div>
+                    <p class="footer-description">Цифровая образовательная платформа нового поколения. Делаем образование доступным и технологичным.</p>
                     <div class="social-links">
-                        <a href="#"><i class="fab fa-vk"></i></a>
-                        <a href="#"><i class="fab fa-telegram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-link" title="Telegram Bot">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                        <a href="#" class="social-link" title="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="#" class="social-link" title="Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
                     </div>
                 </div>
                 <div class="footer-column">
                     <h3>Продукт</h3>
                     <ul class="footer-links">
                         <li><a href="#features">Возможности</a></li>
-                        <li><a href="#audience">Для кого</a></li>
+                        <li><a href="#solutions">Решения</a></li>
                         <li><a href="#roadmap">Развитие</a></li>
                         <li><a href="#download">Скачать</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Поддержка</h3>
+                    <h3>Ресурсы</h3>
                     <ul class="footer-links">
                         <li><a href="./Screens/help.html">Помощь</a></li>
                         <li><a href="./Screens/faq.html">FAQ</a></li>
-                        <li><a href="./Screens/contacts.html">Контакты</a></li>
-                        <li><a href="./Screens/feedback.html">Обратная связь</a></li>
+                        <li><a href="./Screens/about.html">О нас</a></li>
+                        <li><a href="./Screens/partners.html">Партнёры</a></li>
                     </ul>
                 </div>
                 <div class="footer-column">
-                    <h3>Компания</h3>
+                    <h3>Документы</h3>
                     <ul class="footer-links">
-                        <li><a href="./Screens/about.html">О нас</a></li>
-                        <li><a href="./Screens/social.html">Блог</a></li>
-                        <li><a href="./Screens/vacancies.html">Вакансии</a></li>
-                        <li><a href="./Screens/partners.html">Партнёры</a></li>
+                        <li><a href="./Screens/privacy.html">Политика конфиденциальности</a></li>
+                        <li><a href="./Screens/terms.html">Пользовательское соглашение</a></li>
+                        <li><a href="./Screens/license.html">Лицензионное соглашение</a></li>
                     </ul>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Class Compass. Все права защищены.</p>
+                <div class="footer-bottom-links">
+                    <a href="./Screens/privacy.html">Конфиденциальность</a>
+                    <span class="separator">•</span>
+                    <a href="./Screens/terms.html">Условия использования</a>
+                    <span class="separator">•</span>
+                    <a href="./Screens/license.html">Лицензия</a>
+                </div>
+                <p class="copyright">&copy; 2025 Class Compass. Все права защищены.</p>
             </div>
         </div>
     </footer>
-
-    <!-- Feedback Button -->
-<button id="feedbackBtn" class="btn btn-accent" style="position:fixed;bottom:20px;right:20px;z-index:1000;">
-    Связаться с нами
-  </button>
-  
-  <!-- Feedback Modal -->
-  <div id="feedbackModal" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.6);z-index:999;">
-    <div style="background:#fff;padding:20px;border-radius:10px;max-width:400px;margin:100px auto;position:relative;">
-      <h3>Обратная связь</h3>
-      <form id="feedbackForm">
-        <label>Ваше имя:</label><br>
-        <input type="text" name="name" required style="width:100%;margin-bottom:10px;"><br>
-        <label>Ваш Email:</label><br>
-        <input type="email" name="email" required style="width:100%;margin-bottom:10px;"><br>
-        <label>Сообщение:</label><br>
-        <textarea name="message" rows="4" required style="width:100%;margin-bottom:10px;"></textarea><br>
-        <button type="submit" class="btn btn-accent">Отправить</button>
-        <button type="button" id="closeFeedback" class="btn btn-outline" style="margin-left:10px;">Закрыть</button>
-      </form>
-    </div>
-  </div>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="scripts.js"></script>

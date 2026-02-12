@@ -1,150 +1,433 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Помощь — EduSphere</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #000;
-      --secondary: #7F8285;
-      --light: #F9F9F9;
-      --dark: #1A1B22;
-      --background: #FFF;
-      --accent: #FFDB4D;
-      --border: #E0E0E0;
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'YS Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    }
-    
-    body {
-      line-height: 1.6;
-      color: var(--dark);
-      background-color: var(--background);
-    }
-    
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-    
-    h1 {
-      font-size: 42px;
-      margin-bottom: 30px;
-      text-align: center;
-      position: relative;
-    }
-    
-    h1::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 4px;
-      background-color: var(--accent);
-    }
-    
-    .help-item {
-      margin-bottom: 30px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      padding: 25px;
-      transition: all 0.3s ease;
-    }
-    
-    .help-item:hover {
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    }
-    
-    .help-item h2 {
-      color: var(--primary);
-      margin-bottom: 15px;
-      display: flex;
-      align-items: center;
-    }
-    
-    .help-item h2 i {
-      margin-right: 15px;
-      color: var(--accent);
-    }
-    
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      padding: 12px 24px;
-      background-color: var(--primary);
-      color: white;
-      border-radius: 8px;
-      text-decoration: none;
-      margin-top: 40px;
-      transition: all 0.3s ease;
-    }
-    
-    .btn:hover {
-      background-color: #333;
-      transform: translateY(-3px);
-    }
-    
-    .btn i {
-      margin-right: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Центр помощи | Class Compass</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Root Variables - Dark Theme (Same as main) */
+        :root {
+            --bg-primary: #0A0A0F;
+            --bg-secondary: #12121A;
+            --bg-card: #1A1A24;
+            --bg-hover: #252530;
+            --text-primary: #FFFFFF;
+            --text-secondary: #C0C0D0;
+            --text-muted: #9090A0;
+            --accent-primary: #6366F1;
+            --accent-hover: #8183FF;
+            --accent-glow: rgba(99, 102, 241, 0.3);
+            --border-color: #2A2A35;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --danger: #EF4444;
+            --gradient-start: #6366F1;
+            --gradient-end: #8B5CF6;
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 8px 30px rgba(99, 102, 241, 0.15);
+            --shadow-lg: 0 12px 40px rgba(99, 102, 241, 0.25);
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 24px;
+            flex: 1;
+        }
+
+        /* Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            background: linear-gradient(to right, #FFFFFF, #E0E0FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .page-header h1 i {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-right: 12px;
+        }
+
+        .page-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 2px;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 24px auto 0;
+        }
+
+        /* Help Grid */
+        .help-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .help-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 32px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .help-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 0;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            transition: height 0.4s ease;
+            border-radius: 2px;
+        }
+
+        .help-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            background: var(--bg-hover);
+            box-shadow: var(--shadow-md);
+        }
+
+        .help-card:hover::before {
+            height: 100%;
+        }
+
+        .help-icon {
+            width: 64px;
+            height: 64px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.2), rgba(139, 92, 246, 0.2));
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: var(--accent-primary);
+            font-size: 28px;
+            transition: var(--transition);
+        }
+
+        .help-card:hover .help-icon {
+            transform: scale(1.1) rotate(10deg);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.3), rgba(139, 92, 246, 0.3));
+        }
+
+        .help-card h2 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+        }
+
+        .help-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .help-card ul, .help-card ol {
+            color: var(--text-secondary);
+            font-size: 15px;
+            padding-left: 20px;
+            margin-bottom: 0;
+        }
+
+        .help-card li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+
+        .help-card li::marker {
+            color: var(--accent-primary);
+        }
+
+        /* Back Button */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            box-shadow: 0 8px 20px var(--accent-glow);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px var(--accent-glow);
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover i {
+            transform: translateX(-5px);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Quick Navigation */
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .quick-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 100px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .quick-link:hover {
+            border-color: var(--accent-primary);
+            background: var(--bg-hover);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .quick-link i {
+            color: var(--accent-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .container {
+                padding: 80px 20px;
+            }
+            
+            .page-header h1 {
+                font-size: 40px;
+            }
+            
+            .help-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 568px) {
+            .page-header h1 {
+                font-size: 32px;
+            }
+            
+            .page-header p {
+                font-size: 16px;
+            }
+            
+            .help-card {
+                padding: 24px;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-primary);
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--accent-primary);
+            color: white;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1 data-aos="fade-up"><i class="fas fa-question-circle"></i> Помощь</h1>
-    
-    <div class="help-item" data-aos="fade-up" data-aos-delay="100">
-      <h2><i class="fas fa-mobile-alt"></i> Проблемы с приложением</h2>
-      <p>Если приложение не запускается или работает некорректно, попробуйте следующие действия:</p>
-      <ul style="margin-top: 10px; margin-left: 20px;">
-        <li>Обновите приложение до последней версии</li>
-        <li>Перезагрузите устройство</li>
-        <li>Очистите кэш приложения</li>
-      </ul>
+    <div class="container">
+        <header class="page-header" data-aos="fade-up">
+            <h1><i class="fas fa-question-circle"></i> Центр помощи</h1>
+            <p>Найдите ответы на часто задаваемые вопросы и решения распространённых проблем</p>
+        </header>
+        
+        <div class="help-grid">
+            <div class="help-card" data-aos="fade-up" data-aos-delay="50">
+                <div class="help-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h2>Работа с приложением</h2>
+                <p>Решения распространённых проблем с мобильным приложением:</p>
+                <ul>
+                    <li>Обновите приложение до последней версии</li>
+                    <li>Перезагрузите устройство</li>
+                    <li>Очистите кэш приложения</li>
+                    <li>Проверьте подключение к интернету</li>
+                    <li>Переустановите приложение</li>
+                </ul>
+            </div>
+            
+            <div class="help-card" data-aos="fade-up" data-aos-delay="150">
+                <div class="help-icon">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <h2>Аккаунт и вход</h2>
+                <p>Решение проблем с авторизацией и аккаунтом:</p>
+                <ul>
+                    <li>Воспользуйтесь восстановлением пароля</li>
+                    <li>Проверьте правильность ввода email/логина</li>
+                    <li>Обратитесь к администратору приложения</li>
+                    <li>Убедитесь, что ваш аккаунт активирован</li>
+                    <li>Попробуйте другое устройство</li>
+                </ul>
+            </div>
+            
+            <div class="help-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="help-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h2>Успеваемость</h2>
+                <p>Как работать с системой оценок и аналитики:</p>
+                <ul>
+                    <li>Просматривайте статистику по предметам</li>
+                    <li>Анализируйте слабые и сильные стороны</li>
+                    <li>Следите за динамикой успеваемости</li>
+                    <li>Используйте рекомендации системы</li>
+                    <li>Сравнивайте свои результаты с классом</li>
+                </ul>
+            </div>
+            
+            <div class="help-card" data-aos="fade-up" data-aos-delay="250">
+                <div class="help-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h2>Расписание</h2>
+                <p>Работа с расписанием занятий:</p>
+                <ol>
+                    <li>Проверьте актуальность расписания</li>
+                    <li>Настройте уведомления о занятиях</li>
+                    <li>Синхронизируйте с календарём устройства</li>
+                    <li>Отмечайте выполненные задания</li>
+                    <li>Просматривайте изменения в расписании</li>
+                </ol>
+            </div>
+        
+        <div class="text-center">
+            <a href="../index.html" class="btn">
+                <i class="fas fa-arrow-left"></i> На главную
+            </a>
+        </div>
+        
+        <div class="quick-nav">
+            <a href="faq.html" class="quick-link">
+                <i class="fas fa-comments"></i> Частые вопросы
+            </a>
+            <a href="about.html" class="quick-link">
+                <i class="fas fa-info-circle"></i> О нас
+            </a>
+            <a href="partners.html" class="quick-link">
+                <i class="fas fa-handshake"></i> Партнёры
+            </a>
+        </div>
     </div>
-    
-    <div class="help-item" data-aos="fade-up" data-aos-delay="200">
-      <h2><i class="fas fa-book"></i> Работа с учебными материалами</h2>
-      <p>Как получить доступ к учебникам и заданиям:</p>
-      <ol style="margin-top: 10px; margin-left: 20px;">
-        <li>Авторизуйтесь в системе</li>
-        <li>Выберите нужный предмет в меню</li>
-        <li>Откройте раздел с материалами</li>
-      </ol>
-    </div>
-    
-    <div class="help-item" data-aos="fade-up" data-aos-delay="300">
-      <h2><i class="fas fa-user-graduate"></i> Регистрация и вход</h2>
-      <p>Если вы забыли пароль или не можете войти в аккаунт:</p>
-      <ul style="margin-top: 10px; margin-left: 20px;">
-        <li>Воспользуйтесь функцией восстановления пароля</li>
-        <li>Проверьте правильность ввода email/логина</li>
-        <li>Обратитесь к администратору вашей школы</li>
-      </ul>
-    </div>
-    
-    <a href="../index.html" class="btn" data-aos="fade-up" data-aos-delay="400">
-      <i class="fas fa-arrow-left"></i> Назад на главную
-    </a>
-  </div>
 
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true
-    });
-  </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+    </script>
 </body>
 </html>

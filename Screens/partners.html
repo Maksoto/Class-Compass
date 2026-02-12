@@ -1,296 +1,491 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Наши партнеры — EduSphere</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <style>
-    :root {
-      --primary: #000;
-      --secondary: #7F8285;
-      --light: #F9F9F9;
-      --dark: #1A1B22;
-      --background: #FFF;
-      --accent: #FFDB4D;
-      --border: #E0E0E0;
-      --shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-      --shadow-hover: 0 15px 40px rgba(0, 0, 0, 0.15);
-    }
-    
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'YS Text', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    }
-    
-    @font-face {
-      font-family: 'YS Text';
-      src: url('https://yastatic.net/s3/home/fonts/ys/1/text-regular.woff2') format('woff2');
-      font-weight: 400;
-      font-style: normal;
-    }
-    
-    body {
-      line-height: 1.6;
-      color: var(--dark);
-      background-color: var(--background);
-      padding: 0;
-      margin: 0;
-    }
-    
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
-    
-    .header {
-      text-align: center;
-      margin-bottom: 60px;
-      position: relative;
-    }
-    
-    .header h1 {
-      font-size: 48px;
-      font-weight: 600;
-      margin-bottom: 20px;
-      display: inline-block;
-    }
-    
-    .header h1::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100px;
-      height: 4px;
-      background-color: var(--accent);
-      border-radius: 2px;
-    }
-    
-    .header p {
-      font-size: 18px;
-      color: var(--secondary);
-      max-width: 700px;
-      margin: 0 auto;
-    }
-    
-    .partners-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 100px;
-      margin-bottom: 60px;
-    }
-    
-    .partner-card {
-      background: var(--background);
-      border-radius: 16px;
-      padding: 30px;
-      box-shadow: var(--shadow);
-      transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-      border: 1px solid var(--border);
-      text-align: center;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .partner-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 5px;
-      height: 0;
-      background-color: var(--accent);
-      transition: height 0.4s ease;
-    }
-    
-    .partner-card:hover {
-      transform: translateY(-10px);
-      box-shadow: var(--shadow-hover);
-    }
-    
-    .partner-card:hover::before {
-      height: 100%;
-    }
-    
-    .partner-logo {
-      width: 120px;
-      height: 120px;
-      object-fit: contain;
-      margin: 0 auto 20px;
-      filter: grayscale(100%);
-      opacity: 0.8;
-      transition: all 0.4s ease;
-    }
-    
-    .partner-card:hover .partner-logo {
-      filter: grayscale(0%);
-      opacity: 1;
-      transform: scale(1.1);
-    }
-    
-    .partner-card h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-      color: var(--dark);
-    }
-    
-    .partner-card p {
-      color: var(--secondary);
-      font-size: 14px;
-      margin-bottom: 15px;
-    }
-    
-    .partner-type {
-      display: inline-block;
-      padding: 4px 12px;
-      background-color: var(--accent);
-      color: var(--dark);
-      border-radius: 20px;
-      font-size: 12px;
-      font-weight: 600;
-      margin-top: 10px;
-    }
-    
-    .testimonial-section {
-      background-color: var(--light);
-      padding: 60px;
-      border-radius: 16px;
-      margin-bottom: 60px;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .testimonial-section::before {
-      content: '"';
-      position: absolute;
-      top: 30px;
-      left: 30px;
-      font-size: 120px;
-      color: rgba(0,0,0,0.05);
-      font-family: serif;
-      line-height: 1;
-    }
-    
-    .testimonial-text {
-      font-size: 20px;
-      font-style: italic;
-      margin-bottom: 30px;
-      position: relative;
-      z-index: 1;
-    }
-    
-    .testimonial-author {
-      font-weight: 600;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-    
-    .testimonial-author img {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-right: 15px;
-      border: 3px solid var(--accent);
-    }
-    
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 14px 28px;
-      background-color: var(--primary);
-      color: white;
-      border-radius: 10px;
-      text-decoration: none;
-      font-weight: 500;
-      font-size: 16px;
-      transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-      margin: 0 auto;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    }
-    
-    .btn:hover {
-      background-color: #333;
-      transform: translateY(-3px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    }
-    
-    .btn i {
-      margin-right: 10px;
-    }
-    
-    @media (max-width: 768px) {
-      .header h1 {
-        font-size: 36px;
-      }
-      
-      .partners-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      .testimonial-section {
-        padding: 30px;
-      }
-      
-      .testimonial-text {
-        font-size: 18px;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Наши партнеры | Class Compass</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Root Variables - Dark Theme (Same as main) */
+        :root {
+            --bg-primary: #0A0A0F;
+            --bg-secondary: #12121A;
+            --bg-card: #1A1A24;
+            --bg-hover: #252530;
+            --text-primary: #FFFFFF;
+            --text-secondary: #C0C0D0;
+            --text-muted: #9090A0;
+            --accent-primary: #6366F1;
+            --accent-hover: #8183FF;
+            --accent-glow: rgba(99, 102, 241, 0.3);
+            --border-color: #2A2A35;
+            --gradient-start: #6366F1;
+            --gradient-end: #8B5CF6;
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 8px 30px rgba(99, 102, 241, 0.15);
+            --shadow-lg: 0 12px 40px rgba(99, 102, 241, 0.25);
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 24px;
+            flex: 1;
+        }
+
+        /* Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            background: linear-gradient(to right, #FFFFFF, #E0E0FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .page-header h1 i {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-right: 12px;
+        }
+
+        .page-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 2px;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 24px auto 0;
+        }
+
+        /* Partners Grid */
+        .partners-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .partner-card {
+            background: var(--bg-card);
+            border-radius: 24px;
+            padding: 40px 32px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .partner-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 100% 0%, rgba(99, 102, 241, 0.1), transparent 70%);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .partner-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-primary);
+            background: var(--bg-hover);
+            box-shadow: var(--shadow-md);
+        }
+
+        .partner-card:hover::before {
+            opacity: 1;
+        }
+
+        .partner-logo-container {
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 28px;
+            padding: 25px;
+            border: 1px solid var(--border-color);
+            transition: var(--transition);
+        }
+
+        .partner-card:hover .partner-logo-container {
+            border-color: var(--accent-primary);
+            transform: scale(1.05);
+            background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+        }
+
+        .partner-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            filter: brightness(0.9) grayscale(20%);
+            transition: var(--transition);
+        }
+
+        .partner-card:hover .partner-logo {
+            filter: brightness(1) grayscale(0%);
+            transform: scale(1.1);
+        }
+
+        .partner-card h3 {
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .partner-card p {
+            color: var(--text-muted);
+            font-size: 15px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .partner-type {
+            display: inline-block;
+            padding: 6px 18px;
+            background: rgba(99, 102, 241, 0.15);
+            border-radius: 100px;
+            color: var(--accent-primary);
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Testimonial Section */
+        .testimonial-section {
+            background: var(--bg-secondary);
+            border-radius: 32px;
+            padding: 60px;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .testimonial-section::before {
+            content: '"';
+            position: absolute;
+            top: 30px;
+            left: 40px;
+            font-size: 140px;
+            color: rgba(99, 102, 241, 0.1);
+            font-family: serif;
+            line-height: 1;
+            font-weight: 700;
+        }
+
+        .testimonial-text {
+            font-size: 22px;
+            font-style: italic;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+            color: var(--text-primary);
+            line-height: 1.6;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            color: var(--text-secondary);
+        }
+
+        .testimonial-author i {
+            color: var(--accent-primary);
+            font-size: 20px;
+        }
+
+        .author-name {
+            font-size: 16px;
+        }
+
+        .author-position {
+            color: var(--text-muted);
+            font-size: 14px;
+            font-weight: normal;
+        }
+
+        /* Back Button */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            box-shadow: 0 8px 20px var(--accent-glow);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px var(--accent-glow);
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover i {
+            transform: translateX(-5px);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Quick Navigation */
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .quick-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 100px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .quick-link:hover {
+            border-color: var(--accent-primary);
+            background: var(--bg-hover);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .quick-link i {
+            color: var(--accent-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .container {
+                padding: 80px 20px;
+            }
+            
+            .page-header h1 {
+                font-size: 40px;
+            }
+            
+            .partners-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            }
+            
+            .testimonial-section {
+                padding: 40px 30px;
+            }
+            
+            .testimonial-text {
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 568px) {
+            .page-header h1 {
+                font-size: 32px;
+            }
+            
+            .page-header p {
+                font-size: 16px;
+            }
+            
+            .partners-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .testimonial-section {
+                padding: 30px 20px;
+            }
+            
+            .testimonial-text {
+                font-size: 18px;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-primary);
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--accent-primary);
+            color: white;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <div class="header" data-aos="fade-up">
-      <h1><i class="fas fa-handshake"></i> Наши партнеры</h1>
-      <p>Вместе с ведущими образовательными организациями мы создаем будущее обучения</p>
-    </div>
-    
-    <div class="partners-grid">
-      <div class="partner-card" data-aos="fade-up" data-aos-delay="100">
-        <img src="../IMG_0652.PNG" alt="Школа №2" class="partner-logo">
-        <h3>Школа №2</h3>
-        <p>Пилотная школа внедрения цифровых технологий в образовательный процесс</p>
-        <span class="partner-type">Образовательное учреждение</span>
-      </div>
-      
-      <div class="partner-card" data-aos="fade-up" data-aos-delay="200">
-        <img src="../firebase.png" alt="Firebase" class="partner-logo">
-        <h3>Firebase</h3>
-        <p>Платформа Google для разработки мобильных и веб-приложений с облачной инфраструктурой, обеспечивающая Class Compass надежную аутентификацию, хранение данных и аналитику в реальном времени</p>
-        <span class="partner-type">Технологический партнер</span>
-      </div>
-      
-      <div class="partner-card" data-aos="fade-up" data-aos-delay="300">
-        <img src="../Без названия.jpg" alt="Министерство образования" class="partner-logo">
-        <h3>Министерство образования</h3>
-        <p>Официальный партнер в рамках национального проекта "Образование"</p>
-        <span class="partner-type">Государственный партнер</span>
-      </div>
+    <div class="container">
+        <header class="page-header" data-aos="fade-up">
+            <h1><i class="fas fa-handshake"></i> Наши партнеры</h1>
+            <p>Вместе с ведущими образовательными и технологическими организациями мы создаем будущее обучения</p>
+        </header>
+        
+        <div class="partners-grid">
+            <div class="partner-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="partner-logo-container">
+                    <img src="../IMG_0652.PNG" alt="Школа №2" class="partner-logo">
+                </div>
+                <h3>Школа №2</h3>
+                <p>Пилотная школа внедрения цифровых технологий в образовательный процесс</p>
+                <span class="partner-type">Образовательное учреждение</span>
+            </div>
+            
+            <div class="partner-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="partner-logo-container">
+                    <img src="../firebase.png" alt="Firebase" class="partner-logo">
+                </div>
+                <h3>Firebase</h3>
+                <p>Платформа Google для разработки мобильных и веб-приложений с облачной инфраструктурой</p>
+                <span class="partner-type">Технологический партнер</span>
+            </div>
+        </div>
+
+        <!-- <div class="testimonial-section" data-aos="fade-up">
+            <div class="testimonial-text">
+                "Class Compass помогает нам сделать процесс обучения более прозрачным и эффективным. Ученики стали более мотивированными, а родители всегда в курсе успеваемости своих детей."
+            </div>
+            <div class="testimonial-author">
+                <i class="fas fa-circle"></i>
+                <span class="author-name">Анна Петрова,</span>
+                <span class="author-position">директор школы №2</span>
+            </div>
+        </div> -->
+        
+        <div class="text-center">
+            <a href="../index.html" class="btn">
+                <i class="fas fa-arrow-left"></i> На главную
+            </a>
+        </div>
+        
+        <div class="quick-nav">
+            <a href="help.html" class="quick-link">
+                <i class="fas fa-question-circle"></i> Центр помощи
+            </a>
+            <a href="faq.html" class="quick-link">
+                <i class="fas fa-comments"></i> Частые вопросы
+            </a>
+            <a href="about.html" class="quick-link">
+                <i class="fas fa-info-circle"></i> О нас
+            </a>
+        </div>
     </div>
 
-    
-    <div style="text-align: center;">
-      <a href="../index.html" class="btn">
-        <i class="fas fa-arrow-left"></i> Назад на главную
-      </a>
-    </div>
-  </div>
-
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 800,
-      once: true,
-      easing: 'ease-in-out'
-    });
-  </script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+    </script>
 </body>
 </html>
