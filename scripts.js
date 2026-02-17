@@ -65,10 +65,10 @@ document.addEventListener('DOMContentLoaded', function() {
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    animateValue('students-count', 0, 120, 2000);
-                    animateValue('teachers-count', 0, 12, 1500);
-                    animateValue('classes-count', 0, 6, 1800);
-                    animateValue('subjects-count', 0, 8, 1200);
+                    animateValue('students-count', 0, 30, 1500);
+                    animateValue('teachers-count', 0, 2, 1200);
+                    animateValue('classes-count', 0, 3, 1100);
+                    animateValue('subjects-count', 0, 18, 1200);
                     observer.unobserve(entry.target);
                 }
             });
