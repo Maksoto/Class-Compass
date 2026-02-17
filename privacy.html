@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика конфиденциальности | Class Compass (школьный проект)</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* --- СТИЛИ БЕЗ ИЗМЕНЕНИЙ (полностью копируем из вашего файла) --- */
+        /* Root Variables - Dark Theme */
+        :root {
+            --bg-primary: #0A0A0F;
+            --bg-secondary: #12121A;
+            --bg-card: #1A1A24;
+            --bg-hover: #252530;
+            --text-primary: #FFFFFF;
+            --text-secondary: #C0C0D0;
+            --text-muted: #9090A0;
+            --accent-primary: #6366F1;
+            --accent-hover: #8183FF;
+            --accent-glow: rgba(99, 102, 241, 0.3);
+            --border-color: #2A2A35;
+            --gradient-start: #6366F1;
+            --gradient-end: #8B5CF6;
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --shadow-md: 0 8px 30px rgba(99, 102, 241, 0.15);
+            --shadow-lg: 0 12px 40px rgba(99, 102, 241, 0.25);
+            --font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', 'Roboto', sans-serif;
+            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 100px 24px;
+            flex: 1;
+        }
+
+        /* Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .page-header h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            letter-spacing: -1.5px;
+            background: linear-gradient(to right, #FFFFFF, #E0E0FF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: inline-block;
+        }
+
+        .page-header h1 i {
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-right: 12px;
+        }
+
+        .page-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            border-radius: 2px;
+        }
+
+        .page-header p {
+            color: var(--text-muted);
+            font-size: 18px;
+            max-width: 600px;
+            margin: 24px auto 0;
+        }
+
+        .last-updated {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 6px 18px;
+            background: rgba(99, 102, 241, 0.1);
+            border-radius: 100px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            border: 1px solid rgba(99, 102, 241, 0.2);
+        }
+
+        .last-updated i {
+            color: var(--accent-primary);
+            margin-right: 8px;
+        }
+
+        /* Document Content */
+        .document-content {
+            background: var(--bg-card);
+            border-radius: 32px;
+            padding: 48px;
+            border: 1px solid var(--border-color);
+            margin-bottom: 40px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .document-section {
+            margin-bottom: 40px;
+        }
+
+        .document-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .document-section h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .document-section h2 i {
+            color: var(--accent-primary);
+            font-size: 22px;
+        }
+
+        .document-section h3 {
+            font-size: 20px;
+            font-weight: 600;
+            margin: 24px 0 16px;
+            color: var(--text-secondary);
+        }
+
+        .document-section p {
+            color: var(--text-muted);
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .document-section ul, 
+        .document-section ol {
+            color: var(--text-muted);
+            padding-left: 24px;
+            margin-bottom: 20px;
+        }
+
+        .document-section li {
+            margin-bottom: 10px;
+            line-height: 1.7;
+        }
+
+        .document-section li::marker {
+            color: var(--accent-primary);
+        }
+
+        .highlight-box {
+            background: rgba(99, 102, 241, 0.08);
+            border-left: 4px solid var(--accent-primary);
+            padding: 24px;
+            border-radius: 12px;
+            margin: 24px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--text-secondary);
+        }
+
+        .highlight-box i {
+            color: var(--accent-primary);
+            margin-right: 8px;
+        }
+
+        /* Table of Contents */
+        .toc {
+            background: var(--bg-secondary);
+            border-radius: 20px;
+            padding: 28px;
+            margin-bottom: 40px;
+            border: 1px solid var(--border-color);
+        }
+
+        .toc h3 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 16px;
+            color: var(--text-primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc h3 i {
+            color: var(--accent-primary);
+        }
+
+        .toc-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 12px;
+        }
+
+        .toc-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 15px;
+            padding: 8px 12px;
+            border-radius: 8px;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .toc-link:hover {
+            background: var(--bg-hover);
+            color: var(--accent-primary);
+        }
+
+        .toc-link i {
+            font-size: 12px;
+            color: var(--accent-primary);
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .toc-link:hover i {
+            opacity: 1;
+            transform: translateX(3px);
+        }
+
+        /* Back Button */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 32px;
+            border-radius: 100px;
+            font-weight: 600;
+            font-size: 15px;
+            text-decoration: none;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            box-shadow: 0 8px 20px var(--accent-glow);
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px var(--accent-glow);
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .btn:hover i {
+            transform: translateX(-5px);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        /* Quick Navigation */
+        .quick-nav {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+
+        .quick-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 100px;
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: var(--transition);
+        }
+
+        .quick-link:hover {
+            border-color: var(--accent-primary);
+            background: var(--bg-hover);
+            color: var(--text-primary);
+            transform: translateY(-2px);
+        }
+
+        .quick-link i {
+            color: var(--accent-primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 80px 20px;
+            }
+            
+            .page-header h1 {
+                font-size: 36px;
+            }
+            
+            .document-content {
+                padding: 32px 24px;
+            }
+            
+            .document-section h2 {
+                font-size: 22px;
+            }
+        }
+
+        @media (max-width: 568px) {
+            .page-header h1 {
+                font-size: 28px;
+            }
+            
+            .page-header p {
+                font-size: 16px;
+            }
+            
+            .document-content {
+                padding: 24px 20px;
+            }
+            
+            .toc-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--border-color);
+            border-radius: 5px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--accent-primary);
+        }
+
+        /* Selection */
+        ::selection {
+            background: var(--accent-primary);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="page-header" data-aos="fade-up">
+            <h1><i class="fas fa-shield-alt"></i> Политика конфиденциальности</h1>
+            <p>Как мы обрабатываем данные в рамках школьного проекта</p>
+            <div class="last-updated">
+                <i class="fas fa-calendar-alt"></i> Последнее обновление: 17 февраля 2026 г.
+            </div>
+        </header>
+
+        <div class="toc" data-aos="fade-up">
+            <h3><i class="fas fa-list"></i> Содержание</h3>
+            <div class="toc-grid">
+                <a href="#section1" class="toc-link">
+                    <span>1. Общие положения</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#section2" class="toc-link">
+                    <span>2. Какие данные собираем</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#section3" class="toc-link">
+                    <span>3. Зачем нужны данные</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#section4" class="toc-link">
+                    <span>4. Данные электронной школы</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#section5" class="toc-link">
+                    <span>5. Сторонние сервисы</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#section6" class="toc-link">
+                    <span>6. Сколько храним данные</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#section7" class="toc-link">
+                    <span>7. Ваши права</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <a href="#section8" class="toc-link">
+                    <span>8. Контакты</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+        
+        <div class="document-content" data-aos="fade-up">
+            <section id="section1" class="document-section">
+                <h2><i class="fas fa-circle-info"></i> 1. Общие положения</h2>
+                <p>1.1. Эта страница объясняет, какие данные мы собираем и как их используем в нашем школьном проекте Class Compass.</p>
+                <p>1.2. Class Compass — это учебный проект учеников 10 класса. Мы не являемся коммерческой организацией и не зарабатываем на этом приложении.</p>
+                <p>1.3. Используя приложение, вы соглашаетесь с тем, как мы обрабатываем данные.</p>
+        
+                <div class="highlight-box">
+                    <p><i class="fas fa-info-circle"></i> Приложение тестируется среди учеников нашей школы и не предназначено для массового использования.</p>
+                </div>
+            </section>
+        
+            <section id="section2" class="document-section">
+                <h2><i class="fas fa-database"></i> 2. Какие данные мы собираем</h2>
+                <p>2.1. Для работы приложения нам нужны:</p>
+                <ul>
+                    <li>Имя (которое вы укажете при регистрации);</li>
+                    <li>Адрес электронной почты;</li>
+                    <li>Пароль (хранится в зашифрованном виде через Firebase);</li>
+                    <li>Дата регистрации;</li>
+                    <li>Информация о последнем входе.</li>
+                </ul>
+        
+                <p>2.2. Аватарка сохраняется только на вашем телефоне и никуда не передаётся.</p>
+        
+                <p>2.3. Мы НЕ собираем:</p>
+                <ul>
+                    <li>IP-адреса;</li>
+                    <li>данные о местоположении;</li>
+                    <li>информацию о вашем устройстве;</li>
+                    <li>паспортные или другие личные документы.</li>
+                </ul>
+            </section>
+        
+            <section id="section3" class="document-section">
+                <h2><i class="fas fa-bullseye"></i> 3. Зачем нам эти данные</h2>
+                <ul>
+                    <li>Чтобы вы могли войти в приложение;</li>
+                    <li>Чтобы показывать вам учебную информацию;</li>
+                    <li>Чтобы улучшать приложение (мы смотрим, какие функции нужны, а какие — нет);</li>
+                    <li>Чтобы связаться с вами, если что-то пойдёт не так.</li>
+                </ul>
+            </section>
+        
+            <section id="section4" class="document-section">
+                <h2><i class="fas fa-lock"></i> 4. Данные электронной школы</h2>
+                <p>4.1. В приложении можно ввести логин и пароль от школьного электронного дневника.</p>
+                <p>4.2. Как мы с этим работаем:</p>
+                <ul>
+                    <li>Пароль от дневника НЕ сохраняется на наших серверах;</li>
+                    <li>Он хранится только на вашем устройстве в зашифрованном виде;</li>
+                    <li>Мы используем его только для одного дела: чтобы показать вам расписание и оценки прямо в приложении.</li>
+                </ul>
+                <div class="highlight-box">
+                    <p><i class="fas fa-info-circle"></i> Ваши данные от электронной школы не попадают к нам и не передаются третьим лицам.</p>
+                </div>
+            </section>
+        
+            <section id="section5" class="document-section">
+                <h2><i class="fas fa-server"></i> 5. Сторонние сервисы</h2>
+                <p>5.1. Для входа в приложение мы используем Firebase (сервис от Google). Это нужно, чтобы вы могли надёжно и безопасно зарегистрироваться.</p>
+                <p>5.2. Больше никакие сторонние сервисы (реклама, аналитика) не используются.</p>
+            </section>
+        
+            <section id="section6" class="document-section">
+                <h2><i class="fas fa-clock"></i> 6. Сколько храним данные</h2>
+                <p>6.1. Данные хранятся, пока существует проект. Вы можете в любой момент попросить удалить ваш аккаунт.</p>
+                <p>6.2. Когда проект закончится (например, после защиты в школе), все данные пользователей будут удалены. Дата завершения проекта пока неизвестна, но мы предупредим заранее.</p>
+            </section>
+        
+            <section id="section7" class="document-section">
+                <h2><i class="fas fa-user-check"></i> 7. Ваши права</h2>
+                <ul>
+                    <li>Вы можете попросить удалить ваш аккаунт — напишите нам, и мы сделаем это в течение нескольких дней.</li>
+                    <li>Вы можете спросить, какие данные мы о вас храним, — мы честно расскажем.</li>
+                    <li>Вы можете просто перестать пользоваться приложением в любой момент.</li>
+                </ul>
+            </section>
+        
+            <section id="section8" class="document-section">
+                <h2><i class="fas fa-envelope"></i> 8. Контакты</h2>
+                <p>Если есть вопросы про данные или хотите удалить аккаунт — пишите:</p>
+                <ul>
+                    <li><strong>Email:</strong> maxsostar1908@gmail.com</li>
+                    <li><strong>Telegram:</strong> @ClassCompassBot</li>
+                </ul>
+                <p>Мы авторы проекта, всегда на связи и открыты к диалогу</p>
+            </section>
+        </div>
+        
+        <div class="text-center">
+            <a href="../index.html" class="btn">
+                <i class="fas fa-arrow-left"></i> На главную
+            </a>
+        </div>
+        
+        <div class="quick-nav">
+            <a href="terms.html" class="quick-link">
+                <i class="fas fa-file-contract"></i> Правила использования
+            </a>
+            <a href="license.html" class="quick-link">
+                <i class="fas fa-certificate"></i> Лицензионное соглашение
+            </a>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            easing: 'ease-in-out'
+        });
+
+        // Smooth scroll for TOC links
+        document.querySelectorAll('.toc-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
