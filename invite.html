@@ -5,21 +5,24 @@
 
 <meta charset="UTF-8">
 
-<title>
-Приглашение в Class Compass
-</title>
-
+<title>Приглашение в Class Compass</title>
 
 <meta property="og:title" content="Class Compass — приглашение">
 
 <meta property="og:description" 
 content="Вас пригласили присоединиться к Class Compass">
 
+<meta property="og:image" 
+content="https://maksoto.github.io/Class-Compass/IMG_0652.png">
+
 <meta property="og:url" 
 content="https://maksoto.github.io/Class-Compass/invite.html">
 
 <meta property="og:type" content="website">
 
+<meta property="og:site_name" content="Class Compass">
+
+<meta property="og:locale" content="ru_RU">
 
 <meta name="twitter:card" content="summary_large_image">
 
@@ -33,14 +36,55 @@ content="https://maksoto.github.io/Class-Compass/invite.html">
 Добро пожаловать в Class Compass
 </h1>
 
+<p id="inviteText">
+Загрузка приглашения...
+</p>
+
+
 <p>
-Скачайте приложение и начните пользоваться электронным дневником нового поколения.
+ID приглашения:
+<span id="inviteId">
+</span>
 </p>
 
 
 <a href="#">
 Скачать приложение
 </a>
+
+
+<script>
+
+  // Получаем параметры из ссылки
+  const params = new URLSearchParams(window.location.search);
+
+  // Берём ID
+  const inviteId = params.get("id");
+
+
+  const idElement = document.getElementById("inviteId");
+  const textElement = document.getElementById("inviteText");
+
+
+  if (inviteId) {
+
+      idElement.textContent = inviteId;
+
+      textElement.textContent =
+      "Вас пригласили присоединиться к Class Compass. Ваш код приглашения готов.";
+
+  } 
+  else {
+
+      idElement.textContent = "не найден";
+
+      textElement.textContent =
+      "Приглашение не найдено. Проверьте ссылку.";
+
+  }
+
+
+</script>
 
 
 </body>
